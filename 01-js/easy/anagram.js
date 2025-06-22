@@ -5,7 +5,12 @@
 */
 
 function isAnagram(str1, str2) {
-console.log(str1, str2);
+  // Normalize the strings by removing spaces, converting to lowercase, and sorting the characters
+  const normalize = (str) => 
+    str.replace(/\s+/g, '').toLowerCase().split('').sort().join('');
+
+ 
+  return normalize(str1) === normalize(str2);
 }
 
 module.exports = isAnagram;
